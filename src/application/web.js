@@ -6,7 +6,15 @@ import cors from "cors";
 
 export const web = express();
 web.use(express.json());
-web.use(cors());
+
+// CORS configuration untuk production
+const corsOptions = {
+     origin: process.env.FRONTEND_URL || '*',
+     credentials: true,
+     optionsSuccessStatus: 200
+};
+
+web.use(cors(corsOptions));
 
 web.use(publicRouter);
 web.use(userRouter);

@@ -7,7 +7,7 @@
     "test": "jest -i",
     "start": "node src/main.js",
     "build": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy"
+    "vercel-build": "prisma generate"
   },
   "jest": {
     "transform": {
